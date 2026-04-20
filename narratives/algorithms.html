@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algorithms &amp; Data Structures Narrative · CS 499 · Jeffrey Adjei</title>
+  <link rel="stylesheet" href="../assets/css/shared.css" />
+  <style>
+    .page { padding: 56px 0 40px; }
+    .page-card { padding: 44px 48px; }
+    .tag {
+      display: inline-flex; padding: 7px 14px; border-radius: 999px;
+      background: rgba(139, 92, 246, 0.14);
+      border: 1px solid rgba(139, 92, 246, 0.35);
+      color: #e0d4ff; font-size: 0.82rem; margin-bottom: 16px;
+      letter-spacing: 0.05em; text-transform: uppercase; font-weight: 700;
+    }
+    .divider { height: 1px; background: var(--line); margin: 26px 0; }
+    .highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 20px 0 8px; }
+    .highlight-grid .h { padding: 16px 18px; background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-radius: 12px; color: var(--text); font-weight: 600; }
+    .highlight-grid .h span { display: block; color: var(--muted); font-weight: 400; font-size: 0.9rem; margin-top: 4px; }
+    @media (max-width: 720px) { .page-card { padding: 28px; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand"><strong>Jeffrey Adjei</strong><span>CS 499 Capstone ePortfolio</span></div>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#artifacts">Artifacts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <a class="back-link" href="../index.html#artifacts">← Back to Artifacts</a>
+      <article class="glass-card page-card prose">
+        <span class="tag">Algorithms &amp; Data Structures</span>
+        <h1>3D Graphics Rendering Project (CS 330)</h1>
+        <p class="subtle">Narrative · Original &amp; Enhanced Artifact Reflection</p>
+        <div class="divider"></div>
+
+        <p>
+          This artifact is a 3D graphics rendering system developed in CS 330 using OpenGL. I selected this artifact because it allowed me to demonstrate algorithmic thinking within a visual and performance-sensitive environment. I enhanced the project by restructuring repetitive rendering logic and improving input handling. These changes reduced redundancy and improved scalability, demonstrating my ability to apply data structures and algorithmic principles to optimize system performance. This experience strengthened my ability to analyze existing systems and redesign them for efficiency.
+        </p>
+
+        <h2>What the enhancement demonstrates</h2>
+        <div class="highlight-grid">
+          <div class="h">Rendering Pipeline<span>Structured render stages for clarity and reuse.</span></div>
+          <div class="h">Reduced Redundancy<span>Shared mesh &amp; camera logic moved into reusable modules.</span></div>
+          <div class="h">Scene Organization<span>Scene object handling refactored for scalability.</span></div>
+          <div class="h">Input Handling<span>Cleaner input-to-camera mapping for extensibility.</span></div>
+        </div>
+
+        <div class="divider"></div>
+        <p>
+          <a class="pill-link" href="../original-code/algorithms/">View original files</a>
+          &nbsp;
+          <a class="pill-link" href="../enhanced-code/algorithms/">View enhanced files</a>
+          &nbsp;
+          <a class="pill-link" href="../downloads/algorithms-enhanced.zip" download>Download enhanced .zip</a>
+        </p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Jeffrey Adjei · CS 499 Computer Science Capstone ePortfolio</div>
+  </footer>
+</body>
+</html>

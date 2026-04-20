@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".DashboardActivity">
+
+    <!-- Screen title -->
+    <TextView
+        android:id="@+id/textDashboardTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Weight Dashboard"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:contentDescription="Dashboard title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Date input -->
+    <EditText
+        android:id="@+id/inputDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Date (YYYY-MM-DD)"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:importantForAutofill="no"
+        android:contentDescription="Date input field"
+        app:layout_constraintTop_toBottomOf="@id/textDashboardTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <!-- Weight input -->
+    <EditText
+        android:id="@+id/inputWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Weight (lbs)"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:contentDescription="Weight input field"
+        app:layout_constraintTop_toBottomOf="@id/inputDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Goal input -->
+    <EditText
+        android:id="@+id/inputGoal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Set Goal Weight (lbs)"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:contentDescription="Goal weight input field"
+        app:layout_constraintTop_toBottomOf="@id/inputWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Set goal button -->
+    <Button
+        android:id="@+id/buttonSetGoal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Set Goal"
+        android:textAllCaps="false"
+        android:contentDescription="Set goal button"
+        app:layout_constraintTop_toBottomOf="@id/inputGoal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/addDataButton"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Add entry button -->
+    <Button
+        android:id="@+id/addDataButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Add Entry"
+        android:textAllCaps="false"
+        android:contentDescription="Add entry button"
+        app:layout_constraintTop_toBottomOf="@id/inputGoal"
+        app:layout_constraintStart_toEndOf="@id/buttonSetGoal"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp" />
+
+    <!-- SMS permission button -->
+    <Button
+        android:id="@+id/buttonOpenSmsPermission"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="SMS Permission"
+        android:textAllCaps="false"
+        android:contentDescription="Open SMS permission screen"
+        app:layout_constraintTop_toBottomOf="@id/buttonSetGoal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Goal display -->
+    <TextView
+        android:id="@+id/textGoalDisplay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Goal: not set"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp"
+        android:contentDescription="Current goal display"
+        app:layout_constraintTop_toBottomOf="@id/buttonOpenSmsPermission"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Section label -->
+    <TextView
+        android:id="@+id/textHistoryLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Weight History"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:contentDescription="Weight history section label"
+        app:layout_constraintTop_toBottomOf="@id/textGoalDisplay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Scrollable data grid -->
+    <ScrollView
+        android:id="@+id/scrollTable"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/textHistoryLabel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp">
+
+        <TableLayout
+            android:id="@+id/dataGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"
+            android:paddingBottom="24dp" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

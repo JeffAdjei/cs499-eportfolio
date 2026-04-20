@@ -1,0 +1,34 @@
+.page { padding: 56px 0 40px; }
+.page-card { padding: 40px 44px; }
+.tag {
+  display: inline-flex; padding: 7px 14px; border-radius: 999px;
+  background: rgba(56, 189, 248, 0.14);
+  border: 1px solid rgba(56, 189, 248, 0.32);
+  color: #bfe9fb; font-size: 0.82rem; margin-bottom: 16px;
+  letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700;
+}
+.tag.al { background: rgba(139, 92, 246, 0.14); border-color: rgba(139, 92, 246, 0.32); color: #e0d4ff; }
+.tag.db { background: rgba(34, 197, 94, 0.14); border-color: rgba(34, 197, 94, 0.32); color: #c8f5d8; }
+.file-list {
+  list-style: none; padding: 0; margin: 18px 0 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px;
+}
+.file-list a {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  transition: all .22s ease;
+  color: var(--text);
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.92rem;
+}
+.file-list a:hover { border-color: rgba(56,189,248,0.5); background: rgba(56,189,248,0.08); transform: translateY(-1px); }
+.file-list .fext {
+  display: inline-flex; padding: 3px 8px; border-radius: 6px;
+  background: rgba(148,163,184,0.14); color: var(--muted);
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em;
+}
+.divider { height: 1px; background: var(--line); margin: 26px 0; }
+@media (max-width: 720px) { .page-card { padding: 28px; } }

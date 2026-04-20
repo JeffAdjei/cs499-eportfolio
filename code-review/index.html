@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Review · CS 499 · Jeffrey Adjei</title>
+  <link rel="stylesheet" href="../assets/css/shared.css" />
+  <style>
+    .page { padding: 56px 0 40px; }
+    .page-card { padding: 44px 48px; }
+    .tag {
+      display: inline-flex; padding: 7px 14px; border-radius: 999px;
+      background: rgba(236, 72, 153, 0.14);
+      border: 1px solid rgba(236, 72, 153, 0.32);
+      color: #ffd6ec; font-size: 0.82rem; margin-bottom: 16px;
+      letter-spacing: 0.05em; text-transform: uppercase; font-weight: 700;
+    }
+    .divider { height: 1px; background: var(--line); margin: 26px 0; }
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      background: #000;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04) inset;
+    }
+    .video-frame iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; border: 0;
+    }
+    .checklist { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 8px 0 4px; }
+    .checklist .item { padding: 16px 18px; background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-radius: 12px; }
+    .checklist .item strong { color: var(--text); display: block; margin-bottom: 4px; }
+    .checklist .item span { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 720px) { .page-card { padding: 28px; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand"><strong>Jeffrey Adjei</strong><span>CS 499 Capstone ePortfolio</span></div>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#artifacts">Artifacts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <a class="back-link" href="../index.html">← Back to Portfolio</a>
+      <article class="glass-card page-card prose">
+        <span class="tag">Informal Code Review</span>
+        <h1>Walkthrough &amp; Enhancement Strategy</h1>
+        <p class="subtle">
+          A structured review of the three artifacts — original functionality, weaknesses, and the enhancement plan I followed throughout the capstone.
+        </p>
+        <div class="divider"></div>
+
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/URLmpIz_RUE"
+            title="CS 499 Code Review"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <p style="margin-top: 20px;">
+          <a class="pill-link" href="https://youtu.be/URLmpIz_RUE" target="_blank" rel="noopener noreferrer">
+            Open on YouTube ↗
+          </a>
+        </p>
+
+        <h2>What the code review covers</h2>
+        <div class="checklist">
+          <div class="item"><strong>Existing functionality</strong><span>A walkthrough of each artifact's original purpose and behavior.</span></div>
+          <div class="item"><strong>Code analysis</strong><span>Weaknesses in structure, validation, efficiency, and documentation.</span></div>
+          <div class="item"><strong>Enhancement plan</strong><span>Concrete improvements mapped to the three capstone outcomes.</span></div>
+        </div>
+
+        <div class="divider"></div>
+        <p>
+          <a class="pill-link" href="../index.html#artifacts">View the Enhanced Artifacts →</a>
+        </p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Jeffrey Adjei · CS 499 Computer Science Capstone ePortfolio</div>
+  </footer>
+</body>
+</html>
