@@ -19,6 +19,13 @@
     .highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 20px 0 8px; }
     .highlight-grid .h { padding: 16px 18px; background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-radius: 12px; color: var(--text); font-weight: 600; }
     .highlight-grid .h span { display: block; color: var(--muted); font-weight: 400; font-size: 0.9rem; margin-top: 4px; }
+    .outcome-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .outcome-list li {
+      padding: 14px 18px; border: 1px solid var(--line); border-radius: 12px;
+      background: linear-gradient(160deg, rgba(139,92,246,0.08), rgba(139,92,246,0.02));
+      color: var(--muted);
+    }
+    .outcome-list li strong { color: var(--text); display: block; margin-bottom: 2px; }
     @media (max-width: 720px) { .page-card { padding: 28px; } }
   </style>
 </head>
@@ -42,17 +49,51 @@
         <p class="subtle">Narrative · Original &amp; Enhanced Artifact Reflection</p>
         <div class="divider"></div>
 
+        <h2>What the artifact is</h2>
         <p>
-          This artifact is a 3D graphics rendering system developed in CS 330 using OpenGL. I selected this artifact because it allowed me to demonstrate algorithmic thinking within a visual and performance-sensitive environment. I enhanced the project by restructuring repetitive rendering logic and improving input handling. These changes reduced redundancy and improved scalability, demonstrating my ability to apply data structures and algorithmic principles to optimize system performance. This experience strengthened my ability to analyze existing systems and redesign them for efficiency.
+          The artifact is an OpenGL 3D scene I built for CS 330 Computational Graphics &amp;
+          Visualization. The original project composed a small indoor scene from primitive meshes,
+          loaded textures, and rendered the result through a simple camera and a single scene
+          manager. It relied on a monolithic main loop with repeated rendering calls and
+          hard-coded input handling.
         </p>
 
-        <h2>What the enhancement demonstrates</h2>
+        <h2>Why I included it</h2>
+        <p>
+          I selected this artifact for the <strong>algorithms and data structures</strong>
+          category because graphics work is fundamentally about how data and operations are
+          organized for efficient, repeatable execution. The project gave me a concrete setting to
+          practice separating concerns, eliminating redundancy, and structuring per-frame work
+          around reusable abstractions — exactly the kind of algorithmic thinking I wanted to
+          demonstrate.
+        </p>
+
+        <h2>Enhancements</h2>
         <div class="highlight-grid">
-          <div class="h">Rendering Pipeline<span>Structured render stages for clarity and reuse.</span></div>
-          <div class="h">Reduced Redundancy<span>Shared mesh &amp; camera logic moved into reusable modules.</span></div>
-          <div class="h">Scene Organization<span>Scene object handling refactored for scalability.</span></div>
-          <div class="h">Input Handling<span>Cleaner input-to-camera mapping for extensibility.</span></div>
+          <div class="h">Rendering Pipeline<span>Render stages separated so per-object logic is called through a clear flow rather than inlined in main.</span></div>
+          <div class="h">Reduced Redundancy<span>Shared mesh setup and camera math extracted into dedicated <em>ShapeMeshes</em> and <em>camera</em> modules.</span></div>
+          <div class="h">Scene Organization<span><em>SceneManager</em> owns object lifecycle; <em>ViewManager</em> owns window + view. Clean ownership boundaries.</span></div>
+          <div class="h">Input Handling<span>Input-to-camera mapping refactored so adding a new control type does not require touching the render loop.</span></div>
         </div>
+
+        <h2>Course outcomes demonstrated</h2>
+        <ul class="outcome-list">
+          <li><strong>Outcome 3 — Design &amp; evaluate computing solutions</strong>Restructuring the render pipeline and scene/view/mesh responsibilities shows algorithmic evaluation of trade-offs in how rendering data is organized.</li>
+          <li><strong>Outcome 4 — Innovative techniques, skills &amp; tools</strong>Applying data-structure thinking (ownership, reuse, separation of concerns) to a graphics pipeline using OpenGL and GLFW.</li>
+          <li><strong>Outcome 1 — Collaborative environments</strong>The refactor makes the codebase friendlier for another engineer to extend — new shapes or cameras no longer require touching unrelated code.</li>
+          <li><strong>Outcome 2 — Professional communication</strong>Header comments, module boundaries, and this narrative communicate the design intent behind each change.</li>
+        </ul>
+
+        <h2>Reflection on the process</h2>
+        <p>
+          The hardest part of this enhancement was resisting the temptation to treat graphics code
+          as a single script just because the scene was visually small. Once I accepted that
+          repeated setup code and monolithic loops were structural problems, the refactor became
+          straightforward: name the responsibilities, give each one a home, and let the render
+          flow call into them. I came away with a much stronger instinct for when duplication
+          signals a missing abstraction rather than a harmless shortcut, which is a habit I will
+          carry into larger systems.
+        </p>
 
         <div class="divider"></div>
         <p>
@@ -61,6 +102,8 @@
           <a class="pill-link" href="../enhanced-code/algorithms/">View enhanced files</a>
           &nbsp;
           <a class="pill-link" href="../downloads/algorithms-enhanced.zip" download>Download enhanced .zip</a>
+          &nbsp;
+          <a class="pill-link" href="../downloads/algorithms-original.zip" download>Download original .zip</a>
         </p>
       </article>
     </div>

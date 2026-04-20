@@ -19,6 +19,13 @@
     .highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 20px 0 8px; }
     .highlight-grid .h { padding: 16px 18px; background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-radius: 12px; color: var(--text); font-weight: 600; }
     .highlight-grid .h span { display: block; color: var(--muted); font-weight: 400; font-size: 0.9rem; margin-top: 4px; }
+    .outcome-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .outcome-list li {
+      padding: 14px 18px; border: 1px solid var(--line); border-radius: 12px;
+      background: linear-gradient(160deg, rgba(56,189,248,0.06), rgba(56,189,248,0.02));
+      color: var(--muted);
+    }
+    .outcome-list li strong { color: var(--text); display: block; margin-bottom: 2px; }
     @media (max-width: 720px) { .page-card { padding: 28px; } }
   </style>
 </head>
@@ -42,17 +49,56 @@
         <p class="subtle">Narrative · Original &amp; Enhanced Artifact Reflection</p>
         <div class="divider"></div>
 
+        <h2>What the artifact is</h2>
         <p>
-          This artifact is a mobile weight tracking application developed in CS 360. I selected this artifact because it demonstrates core software engineering principles, including user interaction, data persistence, and application structure. I enhanced the artifact by improving input validation, refining UI layout consistency, and restructuring database interactions. These improvements demonstrate my ability to design maintainable applications, handle user input safely, and implement structured application logic. Through this process, I strengthened my understanding of modular design, validation strategies, and user-focused development.
+          The artifact is an Android weight tracking application originally developed for CS 360
+          Mobile Architect &amp; Programming. The original app allowed users to log in, create an
+          account, record daily weights against a target, and grant optional SMS permissions for
+          milestone notifications. It was built with Java activities, XML layouts, and a SQLite
+          database helper.
         </p>
 
-        <h2>What the enhancement demonstrates</h2>
+        <h2>Why I included it</h2>
+        <p>
+          I selected this artifact because it demonstrates the full stack of classic software
+          engineering concerns — user interaction, persistent storage, input validation, and
+          application structure — on a real mobile platform. It is also the clearest example of
+          production-style code I wrote during the program, which made it the ideal candidate to
+          show growth in <strong>software design and engineering</strong> for the capstone.
+        </p>
+
+        <h2>Enhancements</h2>
+        <p>
+          I enhanced the application along four intentional axes without changing its core user
+          value. The goal was to make the code behave more like a professionally maintained
+          codebase:
+        </p>
         <div class="highlight-grid">
-          <div class="h">Input Validation<span>Stronger checks on login, account creation, and weight entry.</span></div>
-          <div class="h">Modular Design<span>Activities refactored into focused helper methods.</span></div>
-          <div class="h">Database Layer<span>Cleaner SQLite helper structure with clearer responsibilities.</span></div>
-          <div class="h">Maintainability<span>Documentation added for readability and future iteration.</span></div>
+          <div class="h">Input Validation<span>Stronger checks on login, account creation, and weight entry to prevent invalid state and unsafe inputs.</span></div>
+          <div class="h">Modular Design<span>Activities refactored into focused helper methods (e.g., <em>initializeDatabase</em>, <em>initializeViews</em>, <em>setButtonListeners</em>) for readability and reuse.</span></div>
+          <div class="h">Database Layer<span>Cleaner <em>DatabaseHelper</em> responsibilities; safer query and write paths.</span></div>
+          <div class="h">Maintainability<span>Documentation comments and consistent naming so another engineer could pick up the code without friction.</span></div>
         </div>
+
+        <h2>Course outcomes demonstrated</h2>
+        <ul class="outcome-list">
+          <li><strong>Outcome 3 — Design &amp; evaluate computing solutions</strong>Refactoring the activities into focused methods and restructuring the database helper shows the ability to evaluate an existing design and redesign it against software engineering standards.</li>
+          <li><strong>Outcome 4 — Innovative techniques, skills &amp; tools</strong>Applying modular design, defensive input validation, and clean SQLite access demonstrates use of well-established engineering practices in a real mobile platform.</li>
+          <li><strong>Outcome 5 — Security mindset</strong>Tighter input validation and safer database access reduce the surface area for invalid or malicious input.</li>
+          <li><strong>Outcome 2 — Professional communication</strong>Code comments, naming, and this narrative itself communicate design decisions to a future reader.</li>
+        </ul>
+
+        <h2>Reflection on the process</h2>
+        <p>
+          The most valuable part of this enhancement was the shift in mindset from "make it work"
+          to "make it maintainable." Extracting helper methods and revisiting validation forced me
+          to read my own code through the eyes of another engineer, which is the perspective I
+          want to keep as I move into professional work. I also learned that small structural
+          improvements — a focused helper, a clearer boundary between UI and data — compound into
+          a significantly more readable codebase. No blockers were unsolvable; the main trade-off
+          was scope discipline: resisting the urge to rewrite features beyond what the capstone
+          goals required.
+        </p>
 
         <div class="divider"></div>
         <p>
@@ -61,6 +107,8 @@
           <a class="pill-link" href="../enhanced-code/software-engineering/">View enhanced files</a>
           &nbsp;
           <a class="pill-link" href="../downloads/software-engineering-enhanced.zip" download>Download enhanced .zip</a>
+          &nbsp;
+          <a class="pill-link" href="../downloads/software-engineering-original.zip" download>Download original .zip</a>
         </p>
       </article>
     </div>

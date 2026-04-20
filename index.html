@@ -306,6 +306,39 @@
       .hero-card { padding: 32px 26px; }
     }
 
+    /* Program outcomes grid */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .outcome-card {
+      padding: 22px 22px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .outcome-card .oc-num {
+      font-family: "Space Grotesk", Inter, sans-serif;
+      font-size: 2.2rem; font-weight: 700;
+      background: linear-gradient(135deg, #93c5fd, #c4b5fd);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      line-height: 1; margin-bottom: 10px;
+    }
+    .outcome-card h4 {
+      font-family: "Space Grotesk", Inter, sans-serif;
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+    .outcome-card p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+    .outcome-card::before {
+      content: ""; position: absolute; inset: -1px -1px auto auto;
+      width: 120px; height: 120px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(56,189,248,0.22), transparent 65%);
+      pointer-events: none;
+    }
+
     /* Final CTA strip */
     .cta {
       padding: 36px 40px;
@@ -350,6 +383,7 @@
         <a href="#assessment">Self-Assessment</a>
         <a href="#code-review">Code Review</a>
         <a href="#artifacts">Artifacts</a>
+        <a href="#outcomes">Outcomes</a>
         <a href="#contact">Overview</a>
       </nav>
     </div>
@@ -578,10 +612,51 @@
       </div>
     </section>
 
+    <!-- PROGRAM OUTCOMES -->
+    <section class="section" id="outcomes">
+      <div class="container">
+        <div data-reveal class="section-label"><span class="num">04</span> PROGRAM OUTCOMES</div>
+        <div class="section-header" data-reveal>
+          <div>
+            <h2>Five Outcomes, <span class="accent">Consistently Demonstrated</span></h2>
+          </div>
+          <p>Every artifact and narrative in this portfolio maps back to the CS 499 course outcomes.</p>
+        </div>
+
+        <div class="outcomes-grid">
+          <div class="glass-card outcome-card" data-reveal data-glow>
+            <div class="oc-num">01</div>
+            <h4>Collaborative Environments</h4>
+            <p>Modular design, clear ownership boundaries, and documentation that lets another engineer extend the work without friction.</p>
+          </div>
+          <div class="glass-card outcome-card" data-reveal data-delay="1" data-glow>
+            <div class="oc-num">02</div>
+            <h4>Professional Communication</h4>
+            <p>Written narratives, code review walkthrough, and in-code documentation communicate decisions to technical and non-technical audiences.</p>
+          </div>
+          <div class="glass-card outcome-card" data-reveal data-delay="2" data-glow>
+            <div class="oc-num">03</div>
+            <h4>Design &amp; Evaluate Solutions</h4>
+            <p>Each enhancement was chosen against real trade-offs — modularity, efficiency, and maintainability — not arbitrary rewrites.</p>
+          </div>
+          <div class="glass-card outcome-card" data-reveal data-delay="3" data-glow>
+            <div class="oc-num">04</div>
+            <h4>Innovative Techniques &amp; Tools</h4>
+            <p>Applied MongoDB query idioms, OpenGL module separation, and Android architectural patterns that reflect real industry practice.</p>
+          </div>
+          <div class="glass-card outcome-card" data-reveal data-delay="3" data-glow>
+            <div class="oc-num">05</div>
+            <h4>Security Mindset</h4>
+            <p>Validation hardening in the mobile app and safer CRUD guards in the database layer reduce the surface area for invalid or malicious input.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA / OVERVIEW -->
     <section class="section" id="contact">
       <div class="container">
-        <div data-reveal class="section-label"><span class="num">04</span> PORTFOLIO OVERVIEW</div>
+        <div data-reveal class="section-label"><span class="num">05</span> PORTFOLIO OVERVIEW</div>
         <div class="section-header" data-reveal>
           <div>
             <h2>Organized for <span class="accent">Clear Review</span></h2>

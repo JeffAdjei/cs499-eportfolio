@@ -19,6 +19,13 @@
     .highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 20px 0 8px; }
     .highlight-grid .h { padding: 16px 18px; background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-radius: 12px; color: var(--text); font-weight: 600; }
     .highlight-grid .h span { display: block; color: var(--muted); font-weight: 400; font-size: 0.9rem; margin-top: 4px; }
+    .outcome-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .outcome-list li {
+      padding: 14px 18px; border: 1px solid var(--line); border-radius: 12px;
+      background: linear-gradient(160deg, rgba(34,197,94,0.08), rgba(34,197,94,0.02));
+      color: var(--muted);
+    }
+    .outcome-list li strong { color: var(--text); display: block; margin-bottom: 2px; }
     @media (max-width: 720px) { .page-card { padding: 28px; } }
   </style>
 </head>
@@ -42,17 +49,48 @@
         <p class="subtle">Narrative · Original &amp; Enhanced Artifact Reflection</p>
         <div class="divider"></div>
 
+        <h2>What the artifact is</h2>
         <p>
-          This artifact is a MongoDB-based dashboard application developed in CS 340. I selected this artifact because it demonstrates real-world database integration and data visualization. I enhanced the project by improving CRUD structure, adding query validation, and shifting filtering logic from the application layer into MongoDB queries. These enhancements improved efficiency, maintainability, and security. This process reinforced the importance of designing systems that leverage database capabilities effectively rather than relying on inefficient in-memory processing.
+          The artifact is a Python / MongoDB dashboard built for CS 340 Client/Server Development.
+          It pairs an <em>AnimalShelter</em> CRUD module (PyMongo) with a Jupyter
+          <em>ProjectTwoDashboard</em> built on Dash that visualizes and filters the Austin Animal
+          Center data for the Grazioso Salvare rescue-dog training company.
         </p>
 
-        <h2>What the enhancement demonstrates</h2>
+        <h2>Why I included it</h2>
+        <p>
+          I chose this artifact for the <strong>databases</strong> category because it is a
+          realistic full-path example: a client (the dashboard) talking to a service (the CRUD
+          module) talking to MongoDB. It lets me show growth in query design, validation, and the
+          trade-off between filtering in Python vs. filtering in the database — which is exactly
+          the kind of decision that matters in production.
+        </p>
+
+        <h2>Enhancements</h2>
         <div class="highlight-grid">
-          <div class="h">Safer CRUD<span>Validation prevents unintended bulk operations.</span></div>
-          <div class="h">Query Efficiency<span>Projection, sort, and limit support added to reads.</span></div>
-          <div class="h">Filter in DB<span>Filtering pushed into Mongo queries, not Python loops.</span></div>
-          <div class="h">Error Handling<span>Typed exceptions and helpers for maintainability.</span></div>
+          <div class="h">Safer CRUD<span>Explicit validation in create/update/delete to prevent unintended bulk operations and invalid documents.</span></div>
+          <div class="h">Query Efficiency<span>Added projection, sort, and limit support so reads return only what the dashboard needs.</span></div>
+          <div class="h">Filter in DB<span>Filtering moved into MongoDB queries instead of pulling the whole collection into memory and filtering in Python.</span></div>
+          <div class="h">Error Handling<span>Typed exceptions (<em>ConnectionFailure</em>, <em>OperationFailure</em>, <em>PyMongoError</em>) and helper methods for clearer failure modes.</span></div>
         </div>
+
+        <h2>Course outcomes demonstrated</h2>
+        <ul class="outcome-list">
+          <li><strong>Outcome 3 — Design &amp; evaluate computing solutions</strong>Pushing filtering into MongoDB and adding projection/sort/limit is an explicit evaluation of where computation should live, against real efficiency trade-offs.</li>
+          <li><strong>Outcome 4 — Innovative techniques, skills &amp; tools</strong>Uses MongoDB idioms (projection, sort, limit) and PyMongo typed exceptions rather than ad-hoc loops.</li>
+          <li><strong>Outcome 5 — Security mindset</strong>Guarding against unintended bulk operations and validating CRUD inputs mitigates the most common self-inflicted database failures.</li>
+          <li><strong>Outcome 2 — Professional communication</strong>Docstrings, a clear class-level summary of the Milestone Four improvements, and this narrative document the <em>why</em> behind each change.</li>
+        </ul>
+
+        <h2>Reflection on the process</h2>
+        <p>
+          The biggest lesson was that the database is not just a bucket — it is a computation
+          engine, and using it that way changes how you design everything above it. Once I pushed
+          filtering into MongoDB, both the dashboard and the CRUD module got simpler and faster.
+          The other lesson was the value of explicit failure modes: replacing a generic
+          <em>except Exception</em> with typed PyMongo errors made the code honest about what can
+          actually go wrong, which is something I will keep doing on future data systems.
+        </p>
 
         <div class="divider"></div>
         <p>
@@ -61,6 +99,8 @@
           <a class="pill-link" href="../enhanced-code/databases/">View enhanced files</a>
           &nbsp;
           <a class="pill-link" href="../downloads/databases-enhanced.zip" download>Download enhanced .zip</a>
+          &nbsp;
+          <a class="pill-link" href="../downloads/databases-original.zip" download>Download original .zip</a>
         </p>
       </article>
     </div>

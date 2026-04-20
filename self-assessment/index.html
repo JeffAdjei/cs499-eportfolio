@@ -20,7 +20,21 @@
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
     .divider { height: 1px; background: var(--line); margin: 28px 0; }
-    @media (max-width: 720px) { .page-card { padding: 28px; } }
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin: 10px 0 4px;
+    }
+    .oc {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: linear-gradient(160deg, rgba(56,189,248,0.06), rgba(139,92,246,0.05));
+    }
+    .oc strong { color: var(--text); display: block; margin-bottom: 6px; font-weight: 600; }
+    .oc span { color: var(--muted); font-size: 0.94rem; }
+    @media (max-width: 720px) { .page-card { padding: 28px 22px; } }
   </style>
 </head>
 <body>
@@ -62,6 +76,15 @@
         <p>
           The artifacts in this ePortfolio represent the integration of these skills. Each artifact demonstrates not only technical ability but also growth in problem-solving, system design, and professional thinking. The software engineering artifact shows my ability to structure applications effectively, the algorithms artifact demonstrates my understanding of efficiency and scalability, and the database artifact highlights my ability to design and optimize data-driven systems. Together, these artifacts form a cohesive representation of my capabilities as a computer science professional and provide concrete evidence of my readiness to contribute to real-world engineering teams.
         </p>
+
+        <h2>Mapping to the CS 499 Course Outcomes</h2>
+        <div class="outcomes-grid">
+          <div class="oc"><strong>Outcome 1 — Collaborative Environments</strong><span>Modular code and documentation that lets a teammate read, extend, and trust my work.</span></div>
+          <div class="oc"><strong>Outcome 2 — Professional Communication</strong><span>Clear narratives, a structured code review, and consistent in-code documentation.</span></div>
+          <div class="oc"><strong>Outcome 3 — Design &amp; Evaluate Solutions</strong><span>Each enhancement was a deliberate trade-off against efficiency, maintainability, and scale.</span></div>
+          <div class="oc"><strong>Outcome 4 — Innovative Techniques &amp; Tools</strong><span>Real industry idioms — MongoDB query shape, OpenGL module separation, Android patterns.</span></div>
+          <div class="oc"><strong>Outcome 5 — Security Mindset</strong><span>Input validation, safer CRUD guards, and typed failure modes to reduce attack surface.</span></div>
+        </div>
 
         <div class="divider"></div>
         <p>
